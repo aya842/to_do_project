@@ -1,6 +1,6 @@
 
 import 'package:easy_date_timeline/easy_date_timeline.dart';
-import 'package:easy_date_timeline/easy_date_timeline.dart';
+
 import 'package:flutter/material.dart';
 import 'package:to_do_project_session_11/core/utils/colors_manager.dart';
 import 'package:to_do_project_session_11/presention/screens/home/tabs/tasks_tap/widgets/task_item.dart';
