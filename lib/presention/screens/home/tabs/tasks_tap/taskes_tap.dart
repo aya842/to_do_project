@@ -10,13 +10,16 @@ class TasksTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      children: [
-        buildCalanderTimeLine(),
-        const SizedBox(height: 8),
+    return  Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          buildCalanderTimeLine(),
+          const SizedBox(height: 8),
 
-        TaskItem(),
-      ],
+          TaskItem(),
+        ],
+      ),
     );
   }
   buildCalanderTimeLine()=>EasyDateTimeLine(
@@ -28,7 +31,7 @@ class TasksTap extends StatelessWidget {
     headerProps: const EasyHeaderProps(
       showSelectedDate: false,
       showMonthPicker: false,
-      showHeader: false,
+      showHeader: true,
       monthPickerType: MonthPickerType.dropDown, // to formateed the month
       dateFormatter: DateFormatter.fullDateDMY(),
     ),
@@ -56,7 +59,7 @@ class TasksTap extends StatelessWidget {
         dayStrStyle: TextStyle(color: ColorsManager.black,fontSize: 15,fontWeight: FontWeight.w700),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(8)),
-            // gradient: LinearGradient(
+             //gradient: LinearGradient(
             //   begin: Alignment.topCenter,
             //   end: Alignment.bottomCenter,
             //   colors: [
