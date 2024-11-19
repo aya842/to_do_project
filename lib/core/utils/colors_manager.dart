@@ -6,6 +6,8 @@ class ColorsManager{
   static const white =Color(0xFFFFFFFF);
   static const grey =Color(0xFFC8C9CB);
   static const hint =Color(0xFFA9A9A9);
-  static const black  =Color(0xFF383838);
+  static const black  =Color(0xFF000000);
+  static const black_accent =Color(0xFF383838);
+
 
 }

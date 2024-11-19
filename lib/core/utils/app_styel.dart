@@ -29,6 +29,26 @@ class AppLightStyles{
   static TextStyle ?taskDate=GoogleFonts.roboto(
       fontWeight:FontWeight.normal,fontSize: 12,color: ColorsManager.black
   );
+  static TextStyle ?CalnderSelectedItem=GoogleFonts.roboto(
+      fontWeight:FontWeight.w400,fontSize: 14,color: ColorsManager.blue
+  );
+  static TextStyle ?CalnderUnSelectedItem=GoogleFonts.roboto(
+      fontWeight:FontWeight.w400,fontSize: 14,color: ColorsManager.black
+  );
+  static TextStyle ?title=GoogleFonts.poppins(
+      fontWeight:FontWeight.w500,fontSize: 20,color: ColorsManager.black
+  );
+  static TextStyle ?hint=GoogleFonts.poppins(
+      fontWeight:FontWeight.w300,fontSize: 18,color: ColorsManager.black_accent
+  );
+  static TextStyle ?Account=GoogleFonts.roboto(
+      fontWeight:FontWeight.w400,fontSize: 17,color: ColorsManager.blue
+  );
+
+
+
+
+
 
 
 
