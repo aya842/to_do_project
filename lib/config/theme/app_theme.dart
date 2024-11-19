@@ -13,7 +13,7 @@ class AppTheme{
         onPrimary: ColorsManager.white,
       ),
       appBarTheme: AppBarTheme(
-
+        elevation: 0,
           backgroundColor: ColorsManager.blue,
           titleTextStyle:AppLightStyles.appBarTextStyle
       ),
@@ -30,6 +30,8 @@ class AppTheme{
         type: BottomNavigationBarType.fixed,
         backgroundColor:Colors.transparent,
         elevation: 0,
+
+
 
         selectedItemColor: ColorsManager.blue,
         unselectedItemColor: ColorsManager.grey,

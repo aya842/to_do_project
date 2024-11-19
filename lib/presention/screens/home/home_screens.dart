@@ -13,18 +13,26 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
- int currentIndex=0;
-List<Widget>tabs=[
-  TasksTap(),
-  SettingsTap(),
+  GlobalKey<TasksTapState>tasksTapKey=GlobalKey();
+  int currentIndex = 0;
+  List<Widget>tabs = [
+  ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    tabs=[
+      TasksTap( key: tasksTapKey,),
+      SettingsTap(),
+    ];
+  }
 
-];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
       appBar: AppBar
-         (
+        (
 
         title: Text('ToDo List'),
       ),
@@ -35,42 +43,47 @@ List<Widget>tabs=[
     );
   }
 
-  Widget buildBottomNavBar() => BottomAppBar(
-   // notchMargin: 30,
+  Widget buildBottomNavBar() =>
+      BottomAppBar(
+        // notchMargin: 30,
 
-    child: BottomNavigationBar(
+        child: BottomNavigationBar(
 
- currentIndex: currentIndex,
-         onTap: OnTapped,
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.list),
-          label: 'List',
+          currentIndex: currentIndex,
+          onTap: OnTapped,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list),
+              label: 'List',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+
+            ),
+
+          ],
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
-          label: 'Settings',
+      );
 
-        ),
+  Widget buildFab() =>
+      FloatingActionButton(
+        onPressed: () async{
+          await  TaskBottomSheet.show(context) ;
+          tasksTapKey.currentState?.getTODosFromFireStore();
+         ;// show modal bottom sheet when fab is clicked  // here we will call showTaskButtomSheet() function to show the modal bottom sheet
+        },
 
-      ],
-    ),
-  );
-  Widget buildFab()=>FloatingActionButton(
-     onPressed: (){
-       showTaskButtomSheet();
-     },
-    child:Icon (Icons.add,color: ColorsManager.white, ),);
- 
- 
- 
-  void OnTapped( int index){
-    currentIndex=index  ;
+        child: Icon(Icons.add, color: ColorsManager.white,),);
+
+
+  void OnTapped(int index) {
+    currentIndex = index;
     setState(() {});
   }
-
-  void showTaskButtomSheet() {
-    showModalBottomSheet(context: context,
-        builder:(context)=>TaskBottomSheet.show());
-  }
 }
+//   void showTaskButtomSheet() {
+//     showModalBottomSheet(context: context,
+//         builder:(context)=>TaskBottomSheet.show());
+//   }
+// }
